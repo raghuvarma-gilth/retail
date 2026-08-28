@@ -12,8 +12,8 @@ interface FestivalItem {
 }
 
 const defaultFestivals: FestivalItem[] = [
-  { id: 'fest-ganesh', name: 'Ganesh Chaturthi', daysAway: 9, impact: '+34% sweets & snacks', color: 'text-orange-600 bg-orange-50 border-orange-200' },
-  { id: 'fest-onam', name: 'Onam', daysAway: 16, impact: '+22% rice & lentils', color: 'text-green-700 bg-green-50 border-green-200' },
+  { id: 'fest-janmashtami', name: 'Janmashtami', daysAway: 7, impact: '+38% dairy, butter & sweets', color: 'text-purple-600 bg-purple-50 border-purple-200' },
+  { id: 'fest-ganesh', name: 'Ganesh Chaturthi', daysAway: 17, impact: '+45% modak ingredients & flowers', color: 'text-orange-600 bg-orange-50 border-orange-200' },
 ];
 
 const weatherInsights = [
@@ -54,7 +54,7 @@ export default function FestivalWeatherStrip() {
           {isAiPowered && (
             <span className="flex items-center gap-1 text-[10px] text-primary font-medium bg-primary/10 px-1.5 py-0.5 rounded">
               <Sparkles size={10} />
-              Groq AI (Realtime)
+              Gemini AI
             </span>
           )}
         </div>

@@ -3,9 +3,9 @@ from pydantic import BaseModel
 from typing import Dict, Any
 from services.gemini_service import (
     ask_gemini, explain_restock, generate_marketing_message,
-    summarize_data_insights
+    summarize_data_insights, get_upcoming_festivals
 )
-from services.groq_service import get_upcoming_festivals, get_realtime_greeting
+from services.groq_service import get_realtime_greeting
 from services.huggingface_service import semantic_search, similar_product_search
 
 router = APIRouter(prefix="/ai", tags=["AI"])
@@ -28,7 +28,7 @@ class AnalyticsContext(BaseModel):
 
 @router.get("/festivals")
 def festivals_endpoint():
-    """Fetch real-time upcoming festival demand signals via Groq API."""
+    """Fetch real-time upcoming festival demand signals via Gemini AI."""
     return get_upcoming_festivals()
 
 @router.get("/greeting")

@@ -1,4 +1,5 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const rawBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const BASE_URL = rawBaseUrl.replace(/\/+$/, '');
 
 export async function fetchFromAPI(endpoint: string, options: RequestInit = {}) {
   const controller = new AbortController();

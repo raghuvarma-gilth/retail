@@ -8,6 +8,7 @@ def business_recommendations():
     low_count = inv.get("low_stock_count", 0)
     if low_count > 0:
         rec.append({
+            "id": "rec-stockout",
             "title": f"Reorder {low_count} Critical Stockout SKUs",
             "action": "ORDER NOW",
             "priority": "CRITICAL",
@@ -18,6 +19,7 @@ def business_recommendations():
         })
     
     rec.append({
+        "id": "rec-expiry",
         "title": "Apply Expiry Markdown on Perishable Dairy",
         "action": "APPLY DISCOUNT",
         "priority": "WARNING",
@@ -28,6 +30,7 @@ def business_recommendations():
     })
     
     rec.append({
+        "id": "rec-bundle",
         "title": "Create Weekend Snack & Beverage Bundle",
         "action": "CREATE BUNDLE",
         "priority": "OPPORTUNITY",

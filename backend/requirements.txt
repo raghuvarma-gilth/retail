@@ -13,3 +13,7 @@ google-generativeai>=0.8.0
 requests>=2.32.0
 torch==2.2.2+cpu
 sentence-transformers>=3.0.0
+kagglehub>=0.2.0
+matplotlib>=3.8.0
+pytest>=8.0.0
+httpx>=0.27.0

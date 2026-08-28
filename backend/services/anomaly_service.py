@@ -8,4 +8,4 @@ def detect_anomalies(z=3.0):
     score=(s-s.mean())/(s.std() or 1)
     out=df[score.abs()>z].copy()
     out["z_score"]=score[score.abs()>z]
-    return {"count":int(len(out)),"items":out.head(50).to_dict("records")}
+    return {"count":int(len(out)),"items":out.head(50).to_dict("records"), "anomalies":out.head(50).to_dict("records")}

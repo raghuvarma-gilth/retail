@@ -117,7 +117,7 @@ def semantic_search(query: str, top_n: int = 5):
             scores = _cosine_similarity(q_emb, _embeddings)
             results = []
             for score, name in sorted(zip(scores, _product_names), reverse=True)[:top_n]:
-                results.append({"product": name, "similarity": round(float(score), 4)})
+                results.append({"product_name": name, "similarity": round(float(score), 4)})
             return results
         except Exception as e:
             print(f"Model encoding error ({e}). Falling back to text search.")
@@ -127,7 +127,7 @@ def semantic_search(query: str, top_n: int = 5):
     matches = []
     for name in _product_names:
         score = 0.95 if q_lower in name.lower() else (0.6 if any(w in name.lower() for w in q_lower.split()) else 0.1)
-        matches.append({"product": name, "similarity": score})
+        matches.append({"product_name": name, "similarity": score})
     return sorted(matches, key=lambda x: x["similarity"], reverse=True)[:top_n]
 
 def similar_product_search(product_name: str, top_n: int = 5):
@@ -145,8 +145,8 @@ def similar_product_search(product_name: str, top_n: int = 5):
     results = []
     for score, name in sorted(zip(scores, _product_names), reverse=True):
         if name != product_name:
-            results.append({"product": name, "similarity": round(float(score), 4)})
+            results.append({"product_name": name, "similarity": round(float(score), 4)})
         if len(results) >= top_n:
             break
             
-    return {"product": product_name, "similar_products": results}
+    return {"product_name": product_name, "similar_products": results}

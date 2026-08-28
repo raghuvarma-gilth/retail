@@ -15,7 +15,7 @@ def _get_model():
         genai.configure(api_key=GEMINI_API_KEY)
         _configured = True
     if _model_instance is None:
-        model_name = GEMINI_MODEL or "gemini-3.6-flash"
+        model_name = GEMINI_MODEL or "gemini-1.5-flash"
         _model_instance = genai.GenerativeModel(model_name)
     return _model_instance
 

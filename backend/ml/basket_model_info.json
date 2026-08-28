@@ -1,0 +1,14 @@
+{
+    "algorithm": "FP-Growth",
+    "dataset": "Instacart Market Basket Analysis",
+    "training_transactions": 13251,
+    "total_products": 2835,
+    "frequent_itemsets": 10931,
+    "final_rules": 5993,
+    "products_with_direct_recommendations": 1118,
+    "direct_product_coverage_percent": 39.44,
+    "minimum_support": 0.0005,
+    "minimum_confidence": 0.03,
+    "minimum_lift": 1.0,
+    "maximum_itemset_length": 2
+}

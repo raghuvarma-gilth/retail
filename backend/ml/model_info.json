@@ -1,0 +1,70 @@
+{
+    "model_name": "XGBoost Regressor",
+    "target": "units_sold",
+    "total_records": 70300,
+    "total_features": 43,
+    "baseline": {
+        "mae": 118.5762,
+        "rmse": 151.9838,
+        "r2": -0.9741
+    },
+    "validation": {
+        "mae": 68.8057,
+        "rmse": 88.2928,
+        "r2": 0.3503
+    },
+    "test": {
+        "mae": 69.0517,
+        "rmse": 88.1464,
+        "r2": 0.336
+    },
+    "improvement": {
+        "mae_improvement_pct": 41.77,
+        "rmse_improvement_pct": 42.0
+    },
+    "features": [
+        "year",
+        "month",
+        "day",
+        "day_of_week",
+        "week_of_year",
+        "quarter",
+        "is_weekend",
+        "month_sin",
+        "month_cos",
+        "day_of_week_sin",
+        "day_of_week_cos",
+        "lag_1",
+        "lag_2",
+        "lag_3",
+        "lag_7",
+        "lag_14",
+        "lag_21",
+        "lag_28",
+        "rolling_mean_3",
+        "rolling_mean_7",
+        "rolling_mean_14",
+        "rolling_mean_28",
+        "rolling_std_3",
+        "rolling_std_7",
+        "rolling_std_14",
+        "rolling_std_28",
+        "rolling_max_3",
+        "rolling_max_7",
+        "rolling_max_14",
+        "rolling_max_28",
+        "ewm_7",
+        "ewm_14",
+        "ewm_28",
+        "momentum_7_1",
+        "momentum_14_7",
+        "price",
+        "inventory_level",
+        "discount",
+        "weather_condition",
+        "category",
+        "price_lag_1",
+        "price_change",
+        "price_change_percent"
+    ]
+}

@@ -1,0 +1,502 @@
+[
+    {
+        "product": "Banana",
+        "transaction_count": 2201,
+        "popularity_score": 0.166101
+    },
+    {
+        "product": "Bag of Organic Bananas",
+        "transaction_count": 1746,
+        "popularity_score": 0.131764
+    },
+    {
+        "product": "Organic Strawberries",
+        "transaction_count": 1186,
+        "popularity_score": 0.089503
+    },
+    {
+        "product": "Organic Baby Spinach",
+        "transaction_count": 1148,
+        "popularity_score": 0.086635
+    },
+    {
+        "product": "Organic Hass Avocado",
+        "transaction_count": 968,
+        "popularity_score": 0.073051
+    },
+    {
+        "product": "Organic Avocado",
+        "transaction_count": 779,
+        "popularity_score": 0.058788
+    },
+    {
+        "product": "Large Lemon",
+        "transaction_count": 695,
+        "popularity_score": 0.052449
+    },
+    {
+        "product": "Strawberries",
+        "transaction_count": 670,
+        "popularity_score": 0.050562
+    },
+    {
+        "product": "Organic Raspberries",
+        "transaction_count": 668,
+        "popularity_score": 0.050411
+    },
+    {
+        "product": "Organic Whole Milk",
+        "transaction_count": 636,
+        "popularity_score": 0.047996
+    },
+    {
+        "product": "Limes",
+        "transaction_count": 635,
+        "popularity_score": 0.047921
+    },
+    {
+        "product": "Organic Yellow Onion",
+        "transaction_count": 528,
+        "popularity_score": 0.039846
+    },
+    {
+        "product": "Organic Garlic",
+        "transaction_count": 515,
+        "popularity_score": 0.038865
+    },
+    {
+        "product": "Cucumber Kirby",
+        "transaction_count": 473,
+        "popularity_score": 0.035695
+    },
+    {
+        "product": "Organic Zucchini",
+        "transaction_count": 457,
+        "popularity_score": 0.034488
+    },
+    {
+        "product": "Organic Blueberries",
+        "transaction_count": 439,
+        "popularity_score": 0.03313
+    },
+    {
+        "product": "Organic Lemon",
+        "transaction_count": 415,
+        "popularity_score": 0.031318
+    },
+    {
+        "product": "Honeycrisp Apple",
+        "transaction_count": 397,
+        "popularity_score": 0.02996
+    },
+    {
+        "product": "Organic Fuji Apple",
+        "transaction_count": 387,
+        "popularity_score": 0.029205
+    },
+    {
+        "product": "Organic Grape Tomatoes",
+        "transaction_count": 386,
+        "popularity_score": 0.02913
+    },
+    {
+        "product": "Apple Honeycrisp Organic",
+        "transaction_count": 384,
+        "popularity_score": 0.028979
+    },
+    {
+        "product": "Organic Baby Carrots",
+        "transaction_count": 380,
+        "popularity_score": 0.028677
+    },
+    {
+        "product": "Original Hummus",
+        "transaction_count": 362,
+        "popularity_score": 0.027319
+    },
+    {
+        "product": "Organic Gala Apples",
+        "transaction_count": 358,
+        "popularity_score": 0.027017
+    },
+    {
+        "product": "Sparkling Water Grapefruit",
+        "transaction_count": 348,
+        "popularity_score": 0.026262
+    },
+    {
+        "product": "Organic Cucumber",
+        "transaction_count": 347,
+        "popularity_score": 0.026187
+    },
+    {
+        "product": "Yellow Onions",
+        "transaction_count": 341,
+        "popularity_score": 0.025734
+    },
+    {
+        "product": "Organic Baby Arugula",
+        "transaction_count": 338,
+        "popularity_score": 0.025508
+    },
+    {
+        "product": "Seedless Red Grapes",
+        "transaction_count": 336,
+        "popularity_score": 0.025357
+    },
+    {
+        "product": "Organic Large Extra Fancy Fuji Apple",
+        "transaction_count": 335,
+        "popularity_score": 0.025281
+    },
+    {
+        "product": "Carrots",
+        "transaction_count": 330,
+        "popularity_score": 0.024904
+    },
+    {
+        "product": "Organic Half & Half",
+        "transaction_count": 329,
+        "popularity_score": 0.024828
+    },
+    {
+        "product": "Organic Small Bunch Celery",
+        "transaction_count": 322,
+        "popularity_score": 0.0243
+    },
+    {
+        "product": "Half & Half",
+        "transaction_count": 321,
+        "popularity_score": 0.024225
+    },
+    {
+        "product": "Michigan Organic Kale",
+        "transaction_count": 302,
+        "popularity_score": 0.022791
+    },
+    {
+        "product": "Organic Cilantro",
+        "transaction_count": 298,
+        "popularity_score": 0.022489
+    },
+    {
+        "product": "Asparagus",
+        "transaction_count": 298,
+        "popularity_score": 0.022489
+    },
+    {
+        "product": "Fresh Cauliflower",
+        "transaction_count": 292,
+        "popularity_score": 0.022036
+    },
+    {
+        "product": "Organic Whole String Cheese",
+        "transaction_count": 290,
+        "popularity_score": 0.021885
+    },
+    {
+        "product": "100% Whole Wheat Bread",
+        "transaction_count": 287,
+        "popularity_score": 0.021659
+    },
+    {
+        "product": "Organic Tomato Cluster",
+        "transaction_count": 285,
+        "popularity_score": 0.021508
+    },
+    {
+        "product": "Organic Italian Parsley Bunch",
+        "transaction_count": 283,
+        "popularity_score": 0.021357
+    },
+    {
+        "product": "Organic Blackberries",
+        "transaction_count": 277,
+        "popularity_score": 0.020904
+    },
+    {
+        "product": "Organic Red Bell Pepper",
+        "transaction_count": 273,
+        "popularity_score": 0.020602
+    },
+    {
+        "product": "Organic Peeled Whole Baby Carrots",
+        "transaction_count": 268,
+        "popularity_score": 0.020225
+    },
+    {
+        "product": "Organic Red Onion",
+        "transaction_count": 267,
+        "popularity_score": 0.020149
+    },
+    {
+        "product": "Red Peppers",
+        "transaction_count": 265,
+        "popularity_score": 0.019998
+    },
+    {
+        "product": "Green Bell Pepper",
+        "transaction_count": 256,
+        "popularity_score": 0.019319
+    },
+    {
+        "product": "Blueberries",
+        "transaction_count": 251,
+        "popularity_score": 0.018942
+    },
+    {
+        "product": "Organic Unsweetened Almond Milk",
+        "transaction_count": 250,
+        "popularity_score": 0.018867
+    },
+    {
+        "product": "Raspberries",
+        "transaction_count": 249,
+        "popularity_score": 0.018791
+    },
+    {
+        "product": "Organic Granny Smith Apple",
+        "transaction_count": 243,
+        "popularity_score": 0.018338
+    },
+    {
+        "product": "Spring Water",
+        "transaction_count": 238,
+        "popularity_score": 0.017961
+    },
+    {
+        "product": "Organic D'Anjou Pears",
+        "transaction_count": 236,
+        "popularity_score": 0.01781
+    },
+    {
+        "product": "Organic Ginger Root",
+        "transaction_count": 233,
+        "popularity_score": 0.017584
+    },
+    {
+        "product": "Extra Virgin Olive Oil",
+        "transaction_count": 231,
+        "popularity_score": 0.017433
+    },
+    {
+        "product": "Red Vine Tomato",
+        "transaction_count": 231,
+        "popularity_score": 0.017433
+    },
+    {
+        "product": "Organic Garnet Sweet Potato (Yam)",
+        "transaction_count": 228,
+        "popularity_score": 0.017206
+    },
+    {
+        "product": "Small Hass Avocado",
+        "transaction_count": 226,
+        "popularity_score": 0.017055
+    },
+    {
+        "product": "Boneless Skinless Chicken Breasts",
+        "transaction_count": 223,
+        "popularity_score": 0.016829
+    },
+    {
+        "product": "Grated Parmesan",
+        "transaction_count": 222,
+        "popularity_score": 0.016753
+    },
+    {
+        "product": "Organic Reduced Fat 2% Milk",
+        "transaction_count": 222,
+        "popularity_score": 0.016753
+    },
+    {
+        "product": "Organic Kiwi",
+        "transaction_count": 219,
+        "popularity_score": 0.016527
+    },
+    {
+        "product": "Unsweetened Almondmilk",
+        "transaction_count": 217,
+        "popularity_score": 0.016376
+    },
+    {
+        "product": "Organic Lacinato (Dinosaur) Kale",
+        "transaction_count": 203,
+        "popularity_score": 0.01532
+    },
+    {
+        "product": "Roma Tomato",
+        "transaction_count": 201,
+        "popularity_score": 0.015169
+    },
+    {
+        "product": "Lime Sparkling Water",
+        "transaction_count": 197,
+        "popularity_score": 0.014867
+    },
+    {
+        "product": "Broccoli Crown",
+        "transaction_count": 194,
+        "popularity_score": 0.01464
+    },
+    {
+        "product": "Garlic",
+        "transaction_count": 193,
+        "popularity_score": 0.014565
+    },
+    {
+        "product": "Jalapeno Peppers",
+        "transaction_count": 192,
+        "popularity_score": 0.014489
+    },
+    {
+        "product": "Large Alfresco Eggs",
+        "transaction_count": 191,
+        "popularity_score": 0.014414
+    },
+    {
+        "product": "Organic Grade A Free Range Large Brown Eggs",
+        "transaction_count": 189,
+        "popularity_score": 0.014263
+    },
+    {
+        "product": "2% Reduced Fat Milk",
+        "transaction_count": 188,
+        "popularity_score": 0.014188
+    },
+    {
+        "product": "Uncured Genoa Salami",
+        "transaction_count": 187,
+        "popularity_score": 0.014112
+    },
+    {
+        "product": "Clementines, Bag",
+        "transaction_count": 187,
+        "popularity_score": 0.014112
+    },
+    {
+        "product": "Organic Bartlett Pear",
+        "transaction_count": 185,
+        "popularity_score": 0.013961
+    },
+    {
+        "product": "Orange Bell Pepper",
+        "transaction_count": 184,
+        "popularity_score": 0.013886
+    },
+    {
+        "product": "Unsweetened Original Almond Breeze Almond Milk",
+        "transaction_count": 182,
+        "popularity_score": 0.013735
+    },
+    {
+        "product": "Sparkling Natural Mineral Water",
+        "transaction_count": 181,
+        "popularity_score": 0.013659
+    },
+    {
+        "product": "Red Onion",
+        "transaction_count": 179,
+        "popularity_score": 0.013508
+    },
+    {
+        "product": "Bunched Cilantro",
+        "transaction_count": 176,
+        "popularity_score": 0.013282
+    },
+    {
+        "product": "100% Raw Coconut Water",
+        "transaction_count": 176,
+        "popularity_score": 0.013282
+    },
+    {
+        "product": "Bartlett Pears",
+        "transaction_count": 176,
+        "popularity_score": 0.013282
+    },
+    {
+        "product": "Hass Avocados",
+        "transaction_count": 174,
+        "popularity_score": 0.013131
+    },
+    {
+        "product": "Organic Navel Orange",
+        "transaction_count": 174,
+        "popularity_score": 0.013131
+    },
+    {
+        "product": "Whole Milk",
+        "transaction_count": 172,
+        "popularity_score": 0.01298
+    },
+    {
+        "product": "Organic Broccoli Florets",
+        "transaction_count": 171,
+        "popularity_score": 0.012905
+    },
+    {
+        "product": "Organic Broccoli",
+        "transaction_count": 169,
+        "popularity_score": 0.012754
+    },
+    {
+        "product": "Organic Reduced Fat Milk",
+        "transaction_count": 167,
+        "popularity_score": 0.012603
+    },
+    {
+        "product": "Shredded Parmesan",
+        "transaction_count": 166,
+        "popularity_score": 0.012527
+    },
+    {
+        "product": "Sparkling Lemon Water",
+        "transaction_count": 163,
+        "popularity_score": 0.012301
+    },
+    {
+        "product": "Total 2% with Strawberry Lowfat Greek Strained Yogurt",
+        "transaction_count": 161,
+        "popularity_score": 0.01215
+    },
+    {
+        "product": "Feta Cheese Crumbles",
+        "transaction_count": 159,
+        "popularity_score": 0.011999
+    },
+    {
+        "product": "Organic Romaine Lettuce",
+        "transaction_count": 158,
+        "popularity_score": 0.011924
+    },
+    {
+        "product": "Frozen Organic Wild Blueberries",
+        "transaction_count": 157,
+        "popularity_score": 0.011848
+    },
+    {
+        "product": "Organic Sticks Low Moisture Part Skim Mozzarella String Cheese",
+        "transaction_count": 156,
+        "popularity_score": 0.011773
+    },
+    {
+        "product": "Organic Large Brown Grade AA Cage Free Eggs",
+        "transaction_count": 156,
+        "popularity_score": 0.011773
+    },
+    {
+        "product": "Italian Sparkling Mineral Water",
+        "transaction_count": 155,
+        "popularity_score": 0.011697
+    },
+    {
+        "product": "Organic Black Beans",
+        "transaction_count": 153,
+        "popularity_score": 0.011546
+    },
+    {
+        "product": "Soda",
+        "transaction_count": 153,
+        "popularity_score": 0.011546
+    }
+]

@@ -1,0 +1,35 @@
+{
+    "category": {
+        "Clothing": 0,
+        "Electronics": 1,
+        "Groceries": 2,
+        "Home & Kitchen": 3,
+        "Toys": 4
+    },
+    "weather_condition": {
+        "Cloudy": 0,
+        "Rainy": 1,
+        "Snowy": 2,
+        "Stormy": 3,
+        "Sunny": 4
+    },
+    "seasonality": {
+        "Autumn": 0,
+        "Spring": 1,
+        "Summer": 2,
+        "Winter": 3
+    },
+    "region": {
+        "East": 0,
+        "North": 1,
+        "South": 2,
+        "West": 3
+    },
+    "store_id": {
+        "S001": 0,
+        "S002": 1,
+        "S003": 2,
+        "S004": 3,
+        "S005": 4
+    }
+}

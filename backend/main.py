@@ -1,0 +1,16 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from api import health, forecast, inventory, analytics, pricing, promotion, weather, seasonality, anomaly, recommendations, ai, basket, status
+
+app = FastAPI(title="Retail Intelligence API", version="1.0.0")
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+
+for router in [health.router, forecast.router, inventory.router, analytics.router,
+               pricing.router, promotion.router, weather.router, seasonality.router,
+               anomaly.router, recommendations.router, ai.router,
+               basket.router, status.router]:
+    app.include_router(router)
+
+@app.get("/")
+def root():
+    return {"message": "Retail Intelligence Backend is running", "docs": "/docs"}

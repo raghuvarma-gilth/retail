@@ -75,20 +75,7 @@ export default function SettingsPage() {
               <SlidersHorizontal className="w-4 h-4" />
               Priority Weights
             </button>
-            <button 
-              onClick={() => setActiveSection('api')}
-              className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-left ${activeSection === 'api' ? 'bg-indigo-600/20 text-indigo-400' : 'text-foreground hover:bg-card'}`}
-            >
-              <Key className="w-4 h-4" />
-              API Config
-            </button>
-            <button 
-              onClick={() => setActiveSection('models')}
-              className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-left ${activeSection === 'models' ? 'bg-indigo-600/20 text-indigo-400' : 'text-foreground hover:bg-card'}`}
-            >
-              <Cpu className="w-4 h-4" />
-              Model Config
-            </button>
+
           </div>
 
           {/* Settings Content */}
@@ -216,56 +203,7 @@ export default function SettingsPage() {
               </div>
             </div>
 
-            {/* 5. API Configuration */}
-            <div className={`card-elevated bg-card p-6 rounded-xl border border-border ${activeSection !== 'api' && 'hidden md:block'}`}>
-              <h2 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
-                <Key className="w-5 h-5 text-indigo-400" />
-                External APIs
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Weather API Key (OpenWeather)</label>
-                  <input type="password" defaultValue="••••••••••••••••••••••••" className="w-full bg-background border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-indigo-500 font-mono" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Hugging Face Access Token</label>
-                  <input type="password" defaultValue="hf_••••••••••••••••••••••••" className="w-full bg-background border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-indigo-500 font-mono" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Firebase Project ID</label>
-                  <input type="text" readOnly defaultValue="retailmind-prod-v1" className="w-full bg-secondary border border-border rounded-lg px-4 py-2 text-muted-foreground font-mono cursor-not-allowed" />
-                </div>
-              </div>
-            </div>
 
-            {/* 6. Model Configuration */}
-            <div className={`card-elevated bg-card p-6 rounded-xl border border-border ${activeSection !== 'models' && 'hidden md:block'}`}>
-              <h2 className="text-lg font-semibold text-foreground flex items-center gap-2 mb-4">
-                <Cpu className="w-5 h-5 text-indigo-400" />
-                Model Configuration
-              </h2>
-              <div className="space-y-5">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Default Forecasting Model</label>
-                  <select defaultValue="xgboost" className="w-full bg-background border border-border rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-indigo-500 appearance-none">
-                    <option value="xgboost">XGBoost Optimized (Active)</option>
-                    <option value="exponential">Exponential Smoothing</option>
-                    <option value="moving_avg">Moving Average (Baseline)</option>
-                  </select>
-                </div>
-                
-                <div className="flex items-center justify-between p-4 bg-secondary rounded-lg border border-border">
-                  <div>
-                    <h3 className="font-medium text-foreground">Enable Hugging Face Models</h3>
-                    <p className="text-sm text-muted-foreground mt-0.5">Use foundation models like TimesFM via API</p>
-                  </div>
-                  <label className="relative inline-flex items-center cursor-pointer">
-                    <input type="checkbox" className="sr-only peer" />
-                    <div className="w-11 h-6 bg-muted peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-500"></div>
-                  </label>
-                </div>
-              </div>
-            </div>
 
           </div>
         </div>

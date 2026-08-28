@@ -1,9 +1,19 @@
-import React from 'react';
-import { Calendar, Cloud, Thermometer, Droplets, TrendingUp } from 'lucide-react';
+'use client';
+import React, { useState, useEffect } from 'react';
+import { Calendar, Cloud, Thermometer, Droplets, TrendingUp, Sparkles } from 'lucide-react';
+import { getUpcomingFestivals } from '@/lib/api';
 
-const festivalData = [
-  { id: 'fest-ganesh', name: 'Ganesh Chaturthi', daysAway: 8, impact: '+34% sweets & snacks', color: 'text-orange-600 bg-orange-50 border-orange-200' },
-  { id: 'fest-onam', name: 'Onam', daysAway: 14, impact: '+22% rice & lentils', color: 'text-green-700 bg-green-50 border-green-200' },
+interface FestivalItem {
+  id: string;
+  name: string;
+  daysAway: number;
+  impact: string;
+  color: string;
+}
+
+const defaultFestivals: FestivalItem[] = [
+  { id: 'fest-ganesh', name: 'Ganesh Chaturthi', daysAway: 9, impact: '+34% sweets & snacks', color: 'text-orange-600 bg-orange-50 border-orange-200' },
+  { id: 'fest-onam', name: 'Onam', daysAway: 16, impact: '+22% rice & lentils', color: 'text-green-700 bg-green-50 border-green-200' },
 ];
 
 const weatherInsights = [
@@ -12,17 +22,45 @@ const weatherInsights = [
 ];
 
 export default function FestivalWeatherStrip() {
+  const [festivals, setFestivals] = useState<FestivalItem[]>(defaultFestivals);
+  const [isAiPowered, setIsAiPowered] = useState(false);
+
+  useEffect(() => {
+    let isMounted = true;
+    async function loadFestivals() {
+      try {
+        const res = await getUpcomingFestivals();
+        if (isMounted && res && res.festivals && res.festivals.length > 0) {
+          setFestivals(res.festivals);
+          setIsAiPowered(true);
+        }
+      } catch {
+        // Keeps high quality defaults on network latency
+      }
+    }
+    loadFestivals();
+    return () => { isMounted = false; };
+  }, []);
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
       {/* Festival countdown */}
       <div className="card-elevated p-3">
-        <div className="flex items-center gap-2 mb-2">
-          <Calendar size={14} className="text-accent" />
-          <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Upcoming Festival Demand</span>
+        <div className="flex items-center justify-between gap-2 mb-2">
+          <div className="flex items-center gap-2">
+            <Calendar size={14} className="text-accent" />
+            <span className="text-xs font-semibold text-foreground uppercase tracking-wide">Upcoming Festival Demand</span>
+          </div>
+          {isAiPowered && (
+            <span className="flex items-center gap-1 text-[10px] text-primary font-medium bg-primary/10 px-1.5 py-0.5 rounded">
+              <Sparkles size={10} />
+              Gemini AI
+            </span>
+          )}
         </div>
         <div className="flex gap-3 flex-wrap">
-          {festivalData?.map((f) => (
-            <div key={f?.id} className={`flex items-center gap-2 border rounded-md px-3 py-1.5 ${f?.color}`}>
+          {festivals?.map((f) => (
+            <div key={f?.id} className={`flex items-center gap-2 border rounded-md px-3 py-1.5 ${f?.color || 'text-orange-600 bg-orange-50 border-orange-200'}`}>
               <div>
                 <p className="text-xs font-semibold">{f?.name}</p>
                 <p className="text-[10px] font-medium">

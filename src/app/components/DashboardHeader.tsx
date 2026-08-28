@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sparkles, RefreshCw, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { getAnalyticsOverview } from '@/lib/api';
@@ -36,6 +36,13 @@ export default function DashboardHeader() {
     }
   };
 
+  const [currentDateStr, setCurrentDateStr] = useState('Friday, 28 Aug 2026');
+
+  useEffect(() => {
+    const d = new Date();
+    setCurrentDateStr(d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' }));
+  }, []);
+
   return (
     <div className="flex items-start justify-between gap-4">
       <div>
@@ -45,7 +52,7 @@ export default function DashboardHeader() {
         </div>
         <h1 className="text-2xl font-bold text-foreground">Good Afternoon, Raghu</h1>
         <p className="text-sm text-muted-foreground mt-0.5">
-          Sunday, 23 Aug 2026 · Sharma General Store · <span className="text-danger font-medium">3 critical actions require attention</span>
+          {currentDateStr} · Sharma General Store · <span className="text-danger font-medium">3 critical actions require attention</span>
         </p>
       </div>
       <div className="flex items-center gap-2 shrink-0">

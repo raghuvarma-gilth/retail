@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, Bell, Search, RefreshCw, Calendar } from 'lucide-react';
 
 interface TopbarProps {
@@ -10,6 +10,13 @@ export default function Topbar({ onMobileMenuToggle }: TopbarProps) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
   const [updatedText, setUpdatedText] = useState('Updated 2 min ago');
+
+  const [topDateStr, setTopDateStr] = useState('28 Aug 2026');
+
+  useEffect(() => {
+    const d = new Date();
+    setTopDateStr(d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }));
+  }, []);
 
   return (
     <header className="h-14 bg-card border-b border-border flex items-center px-4 lg:px-6 gap-3 shrink-0">
@@ -55,7 +62,7 @@ export default function Topbar({ onMobileMenuToggle }: TopbarProps) {
         {/* Date */}
         <div className="hidden lg:flex items-center gap-1.5 text-xs text-muted-foreground px-2.5 py-1.5">
           <Calendar size={11} />
-          <span>23 Aug 2026</span>
+          <span>{topDateStr}</span>
         </div>
 
         {/* Notifications */}

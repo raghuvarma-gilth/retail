@@ -50,6 +50,10 @@ export async function getDemandForecast(features: any) {
 }
 
 // AI - Gemini
+export async function getUpcomingFestivals() {
+  return fetchFromAPI('/ai/festivals');
+}
+
 export async function askGemini(prompt: string) {
   return fetchFromAPI('/ai/ask', {
     method: 'POST',

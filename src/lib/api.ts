@@ -55,6 +55,10 @@ export async function getUpcomingFestivals() {
   return fetchFromAPI('/ai/festivals');
 }
 
+export async function getRealtimeGreeting() {
+  return fetchFromAPI('/ai/greeting');
+}
+
 export async function askGemini(prompt: string) {
   return fetchFromAPI('/ai/ask', {
     method: 'POST',

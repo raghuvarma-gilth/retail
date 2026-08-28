@@ -54,7 +54,7 @@ export default function FestivalWeatherStrip() {
           {isAiPowered && (
             <span className="flex items-center gap-1 text-[10px] text-primary font-medium bg-primary/10 px-1.5 py-0.5 rounded">
               <Sparkles size={10} />
-              Gemini AI
+              Groq AI (Realtime)
             </span>
           )}
         </div>

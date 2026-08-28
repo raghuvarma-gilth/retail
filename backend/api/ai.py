@@ -2,14 +2,15 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 from typing import Dict, Any
 from services.gemini_service import (
-    ask_gemini, explain_restock, generate_marketing_message, 
-    summarize_data_insights, get_upcoming_festivals
+    ask_gemini, explain_restock, generate_marketing_message,
+    summarize_data_insights
 )
+from services.groq_service import get_upcoming_festivals, get_realtime_greeting
 from services.huggingface_service import semantic_search, similar_product_search
 
 router = APIRouter(prefix="/ai", tags=["AI"])
 
-class Prompt(BaseModel): 
+class Prompt(BaseModel):
     prompt: str
 
 class RestockContext(BaseModel):
@@ -27,11 +28,16 @@ class AnalyticsContext(BaseModel):
 
 @router.get("/festivals")
 def festivals_endpoint():
-    """Fetch current date and real upcoming festival demand signals via Gemini API."""
+    """Fetch real-time upcoming festival demand signals via Groq API."""
     return get_upcoming_festivals()
 
+@router.get("/greeting")
+def greeting_endpoint():
+    """Get realtime time-aware greeting, current date, and AI-generated store insight."""
+    return get_realtime_greeting()
+
 @router.post("/ask")
-def ask(x: Prompt): 
+def ask(x: Prompt):
     return ask_gemini(x.prompt)
 
 @router.post("/explain/restock")

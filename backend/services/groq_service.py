@@ -78,25 +78,45 @@ DO NOT output any thinking blocks like <think>. ONLY output a raw JSON object ma
         data["source"] = "Groq AI"
         return data
     except Exception as e:
-        # Graceful fallback with hardcoded sensible defaults
+        # Graceful fallback with hardcoded sensible defaults - ONLY FUTURE FESTIVALS
+        fallback_festivals = []
+        
+        # Dussehra - Oct 15, 2026
+        dussehra = datetime.date(2026, 10, 15)
+        if dussehra > today:
+            fallback_festivals.append({
+                "id": "fest-dussehra",
+                "name": "Dussehra",
+                "daysAway": (dussehra - today).days,
+                "impact": "+28% sweets, dry fruits & household essentials",
+                "color": "text-red-600 bg-red-50 border-red-200"
+            })
+        
+        # Diwali - Oct 30, 2026
+        diwali = datetime.date(2026, 10, 30)
+        if diwali > today:
+            fallback_festivals.append({
+                "id": "fest-diwali",
+                "name": "Diwali",
+                "daysAway": (diwali - today).days,
+                "impact": "+42% sweets, diyas, gifting & home supplies",
+                "color": "text-orange-600 bg-orange-50 border-orange-200"
+            })
+        
+        # Eid Milad-un-Nabi - Sep 27, 2026
+        eid = datetime.date(2026, 9, 27)
+        if eid > today and len(fallback_festivals) < 3:
+            fallback_festivals.append({
+                "id": "fest-eid",
+                "name": "Eid Milad-un-Nabi",
+                "daysAway": (eid - today).days,
+                "impact": "+25% biryani ingredients, dry fruits & sweets",
+                "color": "text-green-700 bg-green-50 border-green-200"
+            })
+        
         return {
             "current_date": formatted_date,
-            "festivals": [
-                {
-                    "id": "fest-ganesh",
-                    "name": "Ganesh Chaturthi",
-                    "daysAway": 9,
-                    "impact": "+34% sweets & modak items",
-                    "color": "text-orange-600 bg-orange-50 border-orange-200"
-                },
-                {
-                    "id": "fest-onam",
-                    "name": "Onam Festive Peak",
-                    "daysAway": 16,
-                    "impact": "+24% rice & payasam ingredients",
-                    "color": "text-green-700 bg-green-50 border-green-200"
-                }
-            ],
+            "festivals": fallback_festivals,
             "source": "Static Fallback",
             "fallback": True,
             "error": str(e)

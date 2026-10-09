@@ -37,18 +37,18 @@ IMPORTANT RULES:
 - Assign unique colors from this list: "text-orange-600 bg-orange-50 border-orange-200", "text-green-700 bg-green-50 border-green-200", "text-purple-600 bg-purple-50 border-purple-200", "text-red-600 bg-red-50 border-red-200".
 
 Respond with ONLY a valid JSON object. No markdown, no code fences, no explanation:
-{{
+{
   "current_date": "{formatted_date}",
   "festivals": [
-    {{
+    {
       "id": "fest-1",
       "name": "Festival Name",
       "daysAway": 7,
       "impact": "+35% sweets & dairy",
       "color": "text-orange-600 bg-orange-50 border-orange-200"
-    }}
+    }
   ]
-}}"""
+}"""
     try:
         model = _get_model()
         response = model.generate_content(prompt)
@@ -66,39 +66,39 @@ Respond with ONLY a valid JSON object. No markdown, no code fences, no explanati
         data["source"] = "Gemini AI"
         return data
     except Exception as e:
-        # Hardcoded fallback with verified 2026 dates calculated from today
+        # Hardcoded fallback with verified 2026 dates calculated from today - ONLY FUTURE FESTIVALS
         fallback_festivals = []
         
-        # Janmashtami - Sep 4, 2026
-        janmashtami = datetime.date(2026, 9, 4)
-        if janmashtami > today:
+        # Dussehra - Oct 15, 2026
+        dussehra = datetime.date(2026, 10, 15)
+        if dussehra > today:
             fallback_festivals.append({
-                "id": "fest-janmashtami",
-                "name": "Janmashtami",
-                "daysAway": (janmashtami - today).days,
-                "impact": "+38% dairy, butter & sweets",
-                "color": "text-purple-600 bg-purple-50 border-purple-200"
+                "id": "fest-dussehra",
+                "name": "Dussehra",
+                "daysAway": (dussehra - today).days,
+                "impact": "+28% sweets, dry fruits & household essentials",
+                "color": "text-red-600 bg-red-50 border-red-200"
             })
         
-        # Ganesh Chaturthi - Sep 14, 2026
-        ganesh = datetime.date(2026, 9, 14)
-        if ganesh > today:
+        # Diwali - Oct 30, 2026
+        diwali = datetime.date(2026, 10, 30)
+        if diwali > today:
             fallback_festivals.append({
-                "id": "fest-ganesh",
-                "name": "Ganesh Chaturthi",
-                "daysAway": (ganesh - today).days,
-                "impact": "+45% modak ingredients, flowers & coconut",
+                "id": "fest-diwali",
+                "name": "Diwali",
+                "daysAway": (diwali - today).days,
+                "impact": "+42% sweets, diyas, gifting & home supplies",
                 "color": "text-orange-600 bg-orange-50 border-orange-200"
             })
         
-        # Navratri - Oct 7, 2026
-        navratri = datetime.date(2026, 10, 7)
-        if navratri > today and len(fallback_festivals) < 3:
+        # Eid Milad-un-Nabi - Sep 27, 2026
+        eid = datetime.date(2026, 9, 27)
+        if eid > today and len(fallback_festivals) < 3:
             fallback_festivals.append({
-                "id": "fest-navratri",
-                "name": "Navratri",
-                "daysAway": (navratri - today).days,
-                "impact": "+30% fruits, sabudana & fasting items",
+                "id": "fest-eid",
+                "name": "Eid Milad-un-Nabi",
+                "daysAway": (eid - today).days,
+                "impact": "+25% biryani ingredients, dry fruits & sweets",
                 "color": "text-green-700 bg-green-50 border-green-200"
             })
         
@@ -137,7 +137,8 @@ def explain_restock(product_name: str, current_stock: int, predicted_demand: int
     except Exception as e:
         return {
             "explanation": f"Current stock ({current_stock} units) for {product_name} is lower than projected 7-day demand ({predicted_demand} units). Restock now to prevent potential stockouts.",
-            "fallback": True
+            "fallback": True,
+            "error": str(e)
         }
 
 def generate_marketing_message(product_name: str, discount_percentage: float):
@@ -154,7 +155,8 @@ def generate_marketing_message(product_name: str, discount_percentage: float):
     except Exception as e:
         return {
             "message": f"Special Offer at Sharma General Store! Get {discount_percentage}% off on {product_name} today only. Visit our store or order online now!",
-            "fallback": True
+            "fallback": True,
+            "error": str(e)
         }
 
 def summarize_data_insights(analytics_data: dict):
@@ -170,5 +172,6 @@ def summarize_data_insights(analytics_data: dict):
     except Exception as e:
         return {
             "summary": "Overall inventory levels are balanced. Fast-moving staples like Dairy and Grains are driving 65% of weekly revenue. Consider promotional bundling for slower moving items.",
-            "fallback": True
+            "fallback": True,
+            "error": str(e)
         }

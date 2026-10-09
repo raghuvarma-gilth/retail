@@ -12,8 +12,8 @@ interface FestivalItem {
 }
 
 const defaultFestivals: FestivalItem[] = [
-  { id: 'fest-janmashtami', name: 'Janmashtami', daysAway: 7, impact: '+38% dairy, butter & sweets', color: 'text-purple-600 bg-purple-50 border-purple-200' },
-  { id: 'fest-ganesh', name: 'Ganesh Chaturthi', daysAway: 17, impact: '+45% modak ingredients & flowers', color: 'text-orange-600 bg-orange-50 border-orange-200' },
+  { id: 'fest-dussehra', name: 'Dussehra', daysAway: 6, impact: '+28% sweets, dry fruits & household essentials', color: 'text-red-600 bg-red-50 border-red-200' },
+  { id: 'fest-diwali', name: 'Diwali', daysAway: 21, impact: '+42% sweets, diyas, gifting & home supplies', color: 'text-orange-600 bg-orange-50 border-orange-200' },
 ];
 
 const weatherInsights = [
@@ -30,12 +30,24 @@ export default function FestivalWeatherStrip() {
     async function loadFestivals() {
       try {
         const res = await getUpcomingFestivals();
-        if (isMounted && res && res.festivals && res.festivals.length > 0) {
-          setFestivals(res.festivals);
+        // Filter to only show future festivals (daysAway > 0)
+        const futureFestivals = Array.isArray(res?.festivals)
+          ? res.festivals.filter((festival: any) => festival?.daysAway > 0)
+          : [];
+
+        if (isMounted && futureFestivals.length > 0) {
+          setFestivals(futureFestivals);
           setIsAiPowered(true);
+        } else if (isMounted) {
+          setFestivals(defaultFestivals);
+          setIsAiPowered(false);
         }
       } catch {
         // Keeps high quality defaults on network latency
+        if (isMounted) {
+          setFestivals(defaultFestivals);
+          setIsAiPowered(false);
+        }
       }
     }
     loadFestivals();
